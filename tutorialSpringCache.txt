@@ -1,0 +1,56 @@
+
+
+
+comando para instalar mysql:
+
+
+	# docker run -d -p 3306:3306 --name meu-mysql -e MYSQL_ROOT_PASSWORD=123 mysql:latest
+
+script da tabela:
+
+	#CREATE DATABASE IF NOT EXISTS arqsoftware;
+
+	USE arqsoftware;
+
+	CREATE TABLE product (
+    		 id BIGINT PRIMARY KEY AUTO_INCREMENT,
+   		 description VARCHAR(255),
+   		 name VARCHAR(100),
+   		 price DECIMAL(10,2)
+	);
+
+
+comando para instalar o redis no pc:
+
+
+	# docker run -d -p 6379:6379 --name meu-redis redis:latest
+
+
+
+comando para acessar terminal do redis:
+  
+
+	# docker exec -it meu-redis sh
+
+	# keys * ( para ver objetos cacheados)
+
+
+
+
+
+
+
+Postman:
+
+	url do get : http://localhost:8080/product/1
+
+	url do post http://localhost:8080/product
+	
+		json:
+
+			{
+   		 "description": "Descrição do produto",
+    		"name": "Nome do Produto",
+   		 "price": 19.99
+  			}
+		
